@@ -1,19 +1,12 @@
-import React from 'react'
-import { createContext, useState } from 'react'
-import { data } from 'react-router-dom'
+import React, { createContext, useState } from 'react';
 
-export const recipecontext = createContext(null);
+export const RecipeContext = createContext(null);  // Capital name
+export const RecipeProvider = ({ children }) => {
+    const [data, setData] = useState([]);
 
-const RecipeContext = (props) => {
-    connst [data, setData] = useState([]);
-
-  return (
-
-    <RecipeContextProvider.Provider value={{ data, setData }}>
-      {props.children}
-    </RecipeContextProvider.Provider>
-
-  );
+    return (
+        <RecipeContext.Provider value={{ data, setData }}>
+            {children}
+        </RecipeContext.Provider>
+    );
 };
-
-export default RecipeContext
